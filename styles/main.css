@@ -32,3 +32,33 @@
     padding: 5px;
     margin: 5px;
 }
+
+.claseOcultar{
+    margin: 0 auto;
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 74%;
+}
+
+
+.claseFigureGrande{
+    background-color: white;
+    margin-top: 20px;
+}
+.divImagenGrande{
+    margin: 0 auto;
+    color: black;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+
+.divImagenGrande img{
+    width: 40%;
+}
+
+.divImagenGrande p {
+    font-size: 35px;
+}
