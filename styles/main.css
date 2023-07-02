@@ -4,7 +4,12 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: bisque;
+}
+
 .h1Titulo {
+    font-size: 4rem;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 200px;
@@ -18,7 +23,7 @@
     width: 70%;
 }
 
-.primerasFotos{
+.primerasFotos {
     margin: 0 auto;
     width: 95%;
     display: flex;
@@ -27,36 +32,85 @@
     justify-content: space-between;
 }
 
-.figurePrincipal{
+.figurePrincipal {
     width: 25rem;
     padding: 5px;
     margin: 5px;
 }
 
-.claseOcultar{
+.claseOcultar {
     margin: 0 auto;
     text-align: center;
     background-color: black;
     color: white;
     width: 74%;
+    border-radius: 10px;
+    height: rem;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.imagenesPrincipales {
+    border-radius: 10px;
+
 }
 
 
-.claseFigureGrande{
-    background-color: white;
-    margin-top: 20px;
-}
-.divImagenGrande{
+.claseOcultar figure div {
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
+    background-color:bisque;
+}
+
+.claseOcultar figure div>* {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+}
+
+.claseOcultar figure div p {
+    color: white;
+    font-size: 2rem;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+.claseOcultar figure div button {
+    align-items: center;
+    height: 40px;
+    padding-top: 10px;
+    background-color: black;
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 5px;
+}
+
+.claseOcultar figure div button:hover {
+background-color: rgba(174, 13, 13, 0.834);
+}
+
+
+.divImagenGrande {
+    margin: 0 auto;
+    width: 100%;
     color: black;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
-.divImagenGrande img{
-    width: 40%;
+.divImagenGrande img {
+    width: 32%;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .divImagenGrande p {

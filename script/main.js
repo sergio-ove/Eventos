@@ -3,22 +3,26 @@ const arrayFotos = [
     {
         url: "img/viajes-1.jpg",
         alt: "foto viaje 1",
-        msg: "Viaje a Cuba"
+        msg: "Viaje a Cuba",
+        clase: "imagen1"
     },
     {
         url: "img/viajes-2.jpg",
         alt: "foto viaje 2",
-        msg: "Viaje a México"
+        msg: "Viaje a México",
+        clase: "imagen2"
     },
     {
         url: "img/viajes-3.jpg",
         alt: "foto viaje 3",
-        msg: "Direcciones"
+        msg: "Viaje a cualquier lugar",
+        clase: "imagen3"
     },
     {
         url: "img/viajes-4.jpg",
         alt: "foto viaje 4",
-        msg: "Viaje a Sevilla"
+        msg: "Viaje a Sevilla",
+        clase: "imagen4"
     }
 
 ]
@@ -29,42 +33,45 @@ const arrayFotosGrandes = [
     {
         url: "img/viajes-1.jpg",
         alt: "foto viaje 1",
-        msg: "Viaje a Cuba"
+        msg: "Viaje a Cuba",
+        clase: "imagen-1"
     },
     {
         url: "img/viajes-2.jpg",
         alt: "foto viaje 2",
-        msg: "Viaje a México"
+        msg: "Viaje a México",
+        clase: "imagen-2"
     },
     {
         url: "img/viajes-3.jpg",
         alt: "foto viaje 3",
-        msg: "Direcciones"
+        msg: "Viaje a cualquier lugar",
+        clase: "imagen-3"
     },
     {
         url: "img/viajes-4.jpg",
         alt: "foto viaje 4",
-        msg: "Viaje a Sevilla"
+        msg: "Viaje a Sevilla",
+        clase: "imagen-4"
     }
 
 ]
-
-
-
-
-
 
 
 const fragment = document.createDocumentFragment()
 
 const espacioFotos = document.querySelector('#divPrimerasFotos')
 
+const h2Mostrar = document.querySelector('.tituloMostrar')
+
 const espacioH2ocultar = document.querySelector('#botonOcultar')
 
+const clasesDeLasFotos = arrayFotosGrandes.map(element => element.clase)
 
 
 document.addEventListener("click", (ev) => {
 
+    //EVENTO PARA MOSTRAR LAS 4 FOTOS PRINCIPALES
     if (ev.target.className == 'tituloMostrar') {
 
         arrayFotos.forEach((item) => {
@@ -78,6 +85,8 @@ document.addEventListener("click", (ev) => {
             imgPrincipal.classList.add('imagenesPrincipales')
             imgPrincipal.src = item.url
             imgPrincipal.alt = item.alt
+
+            h2Mostrar.textContent = " "
 
             divPrincipal.append(imgPrincipal)
 
@@ -96,25 +105,26 @@ document.addEventListener("click", (ev) => {
         espacioFotos.append(fragment)
 
 
-
+        //EVENTO PARA OCULTAR LAS 4 FOTOS PRINCIPALES Y MOSTRAR DE NUEVO EL H2 DE MOSTRAR
     } if (ev.target.className == 'claseOcultar') {
+
         espacioFotos.textContent = ' '
+        h2Mostrar.textContent = 'MOSTRAR FOTOS'
+        h2Mostrar.append(fragment)
 
+        //EVENTO PARA MOSTRAR EN TAMAÑO GRANDE LA FOTO QUE SELECCIONE EL USUARIO
     } if (ev.target.className == 'imagenesPrincipales') {
-
-        console.log(ev.target.alt);
-
-        const figureGrande = document.createElement('FIGURE')
-        figureGrande.classList.add('claseFigureGrande')
-
-        const divImagenGrande = document.createElement('DIV')
-        divImagenGrande.classList.add('divImagenGrande')
-
-        const imgGrande = document.createElement('IMG')
 
         const fotoElegida = ev.target.alt
 
-        const coincindenciaFotos = arrayFotos.find(element => element.alt == fotoElegida)
+        const coincindenciaFotos = arrayFotosGrandes.find(element => element.alt == fotoElegida)
+
+        const figureGrande = document.createElement('FIGURE')
+        figureGrande.classList.add(coincindenciaFotos.clase)
+
+        const divImagenGrande = document.createElement('DIV')
+
+        const imgGrande = document.createElement('IMG')
 
         imgGrande.src = coincindenciaFotos.url
         imgGrande.alt = coincindenciaFotos.alt
@@ -122,13 +132,26 @@ document.addEventListener("click", (ev) => {
         const etiquetaTituloFoto = document.createElement('P')
         etiquetaTituloFoto.textContent = coincindenciaFotos.msg
 
+        const botonEliminarFoto = document.createElement('BUTTON')
+        botonEliminarFoto.textContent = 'ELIMINAR'
+        botonEliminarFoto.classList.add(coincindenciaFotos.clase)
+
         divImagenGrande.append(etiquetaTituloFoto)
         divImagenGrande.append(imgGrande)
+        divImagenGrande.append(botonEliminarFoto)
 
         figureGrande.append(divImagenGrande)
 
         espacioH2ocultar.append(figureGrande)
 
+
+    } if (ev.target.className == clasesDeLasFotos[0] || ev.target.className == clasesDeLasFotos[1] || ev.target.className == clasesDeLasFotos[2] || ev.target.className == clasesDeLasFotos[3]) {
+
+        const objetivo = ev.target.className
+
+        const figureAeliminar = document.querySelector(`.${objetivo}`)
+
+        figureAeliminar.remove()
 
     }
 
