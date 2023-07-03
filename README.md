@@ -15,4 +15,4 @@ git clone https://github.com/sergio-ove/Eventos.git
 ```
 Abriremos el proyecto desde 'index.html' 
 ```
-Se abrirá el navegador en [http://localhost:3000](http://localhost:3000) y podrá visualizarse el Inicio.
+Se abrirá el navegador en (http://localhost:3000) y podrá visualizarse el Inicio.
