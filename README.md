@@ -1,6 +1,7 @@
 # Eventos
 
 Práctica creando,mostrando,ocultando y eliminando imágenes mediante delegación de eventos.
+Uso del árbol Dom (Métodos y propiedades)
 
 ### Inicialización del proyecto:
 
