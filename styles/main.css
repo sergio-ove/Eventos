@@ -12,7 +12,7 @@ body{
     font-size: 4rem;
     text-align: center;
     margin-top: 50px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 .tituloMostrar {
@@ -32,11 +32,13 @@ body{
     justify-content: space-between;
 }
 
-.figurePrincipal {
+.figurePrincipal img {
     width: 25rem;
     padding: 5px;
     margin: 5px;
 }
+
+
 
 .claseOcultar {
     margin: 0 auto;
@@ -52,6 +54,7 @@ body{
 
 .imagenesPrincipales {
     border-radius: 10px;
+    width: 80%;
 
 }
 

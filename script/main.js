@@ -145,7 +145,7 @@ document.addEventListener("click", (ev) => {
         espacioH2ocultar.append(figureGrande)
 
 
-    } if (ev.target.className == clasesDeLasFotos[0] || ev.target.className == clasesDeLasFotos[1] || ev.target.className == clasesDeLasFotos[2] || ev.target.className == clasesDeLasFotos[3]) {
+    } if (clasesDeLasFotos.includes(ev.target.className)) {
 
         const objetivo = ev.target.className
 
